@@ -1,13 +1,10 @@
-const user = {
-  name: "Liza",
-  city: "New York",
-  bio: "I made this!",
-  color: "firebrick",
-  links: {
-    github: "https://github.com/liza",
-    linkedin: "https://www.linkedin.com/in/liza/",
-  },
-  projects: [
+import NavBar from "./components/NavBar";
+import Home from "./components/Home";
+import About from "./components/About";
+import ProjectList from "./components/ProjectList";
+
+function App() {
+  const projects = [
     {
       id: 1,
       name: "Reciplease",
@@ -26,7 +23,16 @@ const user = {
       about: "Etsy for aliens",
       technologies: ["React", "Redux", "Rails"],
     },
-  ],
-};
+  ];
 
-export default user;
+  return (
+    <div>
+      <NavBar />
+      <Home />
+      <About />
+      <ProjectList projects={projects} />
+    </div>
+  );
+}
+
+export default App;
